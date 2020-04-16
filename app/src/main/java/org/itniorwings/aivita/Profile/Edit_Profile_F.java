@@ -101,7 +101,7 @@ public class Edit_Profile_F extends RootFragment implements View.OnClickListener
         firstname_edit.setText(Variables.sharedPreferences.getString(Variables.f_name,""));
         lastname_edit.setText(Variables.sharedPreferences.getString(Variables.l_name,""));
         Picasso.with(context)
-                .load(Variables.sharedPreferences.getString(Variables.u_pic,""))
+                .load(Variables.sharedPreferences.getString(Variables.u_pic,"0"))
                 .placeholder(R.drawable.profile_image_placeholder)
                 .resize(200,200)
                 .centerCrop()
@@ -571,7 +571,7 @@ public class Edit_Profile_F extends RootFragment implements View.OnClickListener
 
             }
             else {
-                Toast.makeText(context, ""+jsonObject.optString("msg"), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(context, ""+jsonObject.optString("msg"), Toast.LENGTH_SHORT).show();
             }
         } catch (JSONException e) {
             e.printStackTrace();
