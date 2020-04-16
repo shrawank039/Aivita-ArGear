@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Aivita.iml" filepath="$PROJECT_DIR$/Aivita.iml" group="Aivita" />
+      <module fileurl="file://$PROJECT_DIR$/app/Aivita-app.iml" filepath="$PROJECT_DIR$/app/Aivita-app.iml" group="Aivita/app" />
+      <module fileurl="file://$PROJECT_DIR$/StudioProjects-Aivita.iml" filepath="$PROJECT_DIR$/StudioProjects-Aivita.iml" group="Aivita" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Aivita/app" />
     </modules>
   </component>

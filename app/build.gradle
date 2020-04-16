@@ -13,11 +13,23 @@ android {
         versionName "2.7"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         compileSdkVersion 29
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
     }
 
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility = 1.8
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
     }
 
     buildTypes {
@@ -105,5 +117,15 @@ dependencies {
     implementation 'com.mindorks.android:prdownloader:0.6.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // To add ARGear library
+    implementation (name: 'argear', ext:'aar')
+
+    // To add TensorFlow Lite library
+    implementation 'org.tensorflow:tensorflow-lite:1.14.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:1.14.0'
+
+    // To add gson library
+    implementation "com.google.code.gson:gson:2.8.5"
 
 }
