@@ -447,10 +447,13 @@ public class Profile_Tab_F extends RootFragment implements View.OnClickListener 
                 username1.setText(Objects.requireNonNull(user_info).optString("first_name")+" "+user_info.optString("last_name"));
 
                 ProfileFragment.pic_url=user_info.optString("profile_pic");
-                Picasso.with(context)
-                        .load(ProfileFragment.pic_url)
-                        .placeholder(context.getResources().getDrawable(R.drawable.profile_image_placeholder))
-                        .resize(200,200).centerCrop().into(imageView);
+                if (!ProfileFragment.pic_url.equalsIgnoreCase("")) {
+                    Picasso.with(context)
+                            .load(ProfileFragment.pic_url)
+                            .placeholder(context.getResources().getDrawable(R.drawable.profile_image_placeholder))
+                            .resize(200, 200).centerCrop().into(imageView);
+
+                }
 
                 follow_count_txt.setText(data.optString("total_following"));
                 fans_count_txt.setText(data.optString("total_fans"));

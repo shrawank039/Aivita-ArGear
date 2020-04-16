@@ -15,6 +15,14 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <uses-feature
+        android:glEsVersion="0x00030001"
+        android:required="true" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true"/>
+
+    <uses-feature
         android:name="android.hardware.camera2.full"
         android:required="false" />
     <uses-feature
@@ -53,6 +61,16 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+        <meta-data android:name="android.max_aspect" android:value="2.1" />
+        <activity
+            android:name="org.itniorwings.aivita.ui.CameraActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="locale|layoutDirection">
+        </activity>
+
+        <activity android:name="org.itniorwings.aivita.ui.PlayerActivity" />
+        <activity android:name="org.itniorwings.aivita.ui.ImageViewerActivity" />
 
         <activity
             android:name=".Video_Recording.GalleryVideos.GalleryVideos_A"

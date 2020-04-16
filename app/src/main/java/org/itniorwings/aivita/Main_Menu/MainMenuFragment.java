@@ -36,6 +36,7 @@ import org.itniorwings.aivita.Inbox.Inbox_F;
 import org.itniorwings.aivita.Main_Menu.RelateToFragment_OnBack.OnBackPressListener;
 import org.itniorwings.aivita.Main_Menu.RelateToFragment_OnBack.RootFragment;
 import org.itniorwings.aivita.Profile.Profile_Tab_F;
+import org.itniorwings.aivita.ui.CameraActivity;
 
 import java.util.Objects;
 
@@ -241,9 +242,9 @@ public class MainMenuFragment extends RootFragment implements View.OnClickListen
                 if(check_permissions()) {
                     if(Variables.sharedPreferences.getBoolean(Variables.islogin,false)) {
 
-                        Intent intent = new Intent(getActivity(), Video_Recoder_A.class);
+                        Intent intent = new Intent(getActivity(), CameraActivity.class);
                         startActivity(intent);
-                        Objects.requireNonNull(getActivity()).overridePendingTransition(R.anim.in_from_bottom, R.anim.out_to_top);
+                       // Objects.requireNonNull(getActivity()).overridePendingTransition(R.anim.in_from_bottom, R.anim.out_to_top);
                     }
                     else {
                         Toast.makeText(context, "You have to login First", Toast.LENGTH_SHORT).show();

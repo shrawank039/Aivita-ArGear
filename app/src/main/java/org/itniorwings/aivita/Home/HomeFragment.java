@@ -91,6 +91,7 @@ import org.itniorwings.aivita.Taged.Taged_Videos_F;
 import org.itniorwings.aivita.VideoAction.VideoAction_F;
 import org.itniorwings.aivita.Video_Recording.Video_Recoder_A;
 import org.itniorwings.aivita.Videos.Followings;
+import org.itniorwings.aivita.ui.CameraActivity;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -272,7 +273,7 @@ public class HomeFragment extends RootFragment implements Player.EventListener, 
             Timber.e(sharedPreferences.getString(Variables.u_id, ""));
                 //  Timber.e(response);
 
-                   startActivity(new Intent(getActivity(), Video_Recoder_A.class));
+                   startActivity(new Intent(getActivity(), CameraActivity.class));
                     Toast.makeText(context, "Added to Favourite", Toast.LENGTH_SHORT).show();
                    //  Toast.makeText(context, "Sorry this song is not belongs to aivita", Toast.LENGTH_SHORT).show();
 
