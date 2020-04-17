@@ -8,6 +8,7 @@ import java.util.Locale;
 
 public class Variables {
 
+
     public static int screen_width;
     public static int screen_height;
 

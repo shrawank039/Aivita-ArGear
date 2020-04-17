@@ -3,10 +3,15 @@ package org.itniorwings.aivita;
 
 public class AppConfig {
 
-    public static final String API_URL = "https://apis.argear.io";
-    public static final String API_KEY = "fe49fe8fe8c757e5a4f8d48d";
-    public static final String SECRET_KEY = "5c3b1c9540b4d76134596fd3e9acb2a1aef55245a9980fdd26064ea6b8c5c48c";
-    public static final String AUTH_KEY = "U2FsdGVkX1+k8JjhmPLPROT1F7wdSAiW08DhJymQnqpYdU/VaaSR5BwYgLzfiRsS2LXFf1YXCjfryqzIo4/M0g==";
+    public static final String API_URL = "https://apis.argear.io/api/v3/a6644fb06c241969e4fb5261?dev=true";
+    public static final String API_KEY = "a6644fb06c241969e4fb5261";
+    public static final String SECRET_KEY = "84f8fd93d2b30b8998532e162ae78ced34109394c0131f35b45b1641120d0c6f";
+    public static final String AUTH_KEY = "U2FsdGVkX19maXBfNL+EgL3gQEWqq7jCrXmXIj7Ydac41w3wJk1knXWvgrgHKyIKveqIbNsgYIM0ChCP+b0Wgg==";
+
+//    public static final String API_URL = "https://apis.argear.io";
+//    public static final String API_KEY = "fe49fe8fe8c757e5a4f8d48d";
+//    public static final String SECRET_KEY = "5c3b1c9540b4d76134596fd3e9acb2a1aef55245a9980fdd26064ea6b8c5c48c";
+//    public static final String AUTH_KEY = "U2FsdGVkX1+k8JjhmPLPROT1F7wdSAiW08DhJymQnqpYdU/VaaSR5BwYgLzfiRsS2LXFf1YXCjfryqzIo4/M0g==";
 
     // preference
     public static final String USER_PREF_NAME = BuildConfig.APPLICATION_ID + ".Preference";

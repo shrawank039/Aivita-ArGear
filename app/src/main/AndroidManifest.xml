@@ -45,7 +45,9 @@
         tools:ignore="LockedOrientationActivity, InnerclassSeparator"
         tools:replace="allowBackup,supportsRtl"
         tools:targetApi="n">
-        <activity android:name=".Notifications.NotificationActivity"></activity>
+        <activity android:name=".Notifications.NotificationActivity">
+
+        </activity>
         <activity android:name=".Accounts.SignUpActivity" />
 
         <uses-library

@@ -40,19 +40,19 @@
             android:onClick="onClickButtons"
             android:background="@drawable/btn_more"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_alignParentEnd="true" >
-            <Button
-                android:id="@+id/camera_switch_button"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:onClick="onClickButtons"
-                android:background="@drawable/btn_camera_switch"/>
-        </LinearLayout>
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_alignParentEnd="true" >-->
+<!--            <Button-->
+<!--                android:id="@+id/camera_switch_button"-->
+<!--                android:layout_width="52dp"-->
+<!--                android:layout_height="52dp"-->
+<!--                android:onClick="onClickButtons"-->
+<!--                android:background="@drawable/btn_camera_switch"/>-->
+<!--        </LinearLayout>-->
 
         <!--more layout-->
         <include
@@ -64,6 +64,7 @@
             android:visibility="gone"/>
 
         <LinearLayout
+            android:layout_above="@id/functions_layout"
             android:id="@+id/shutter_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,7 +72,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:paddingStart="43dp"
-            android:layout_marginBottom="113.5dp">
+            android:layout_marginBottom="143.5dp">
 
             <org.itniorwings.aivita.ui.widget.UnderLineView
                 android:id="@+id/shutter_photo_button"
@@ -95,6 +96,90 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_250sdp"
+            android:orientation="vertical"
+            android:id="@+id/camera_options"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="3dp"
+                android:onClick="onClickButtons"
+                android:scaleType="fitCenter"
+                android:id="@+id/camera_switch_button"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_rotate_cam"/>
+
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitCenter"
+                android:id="@+id/camera_speed"
+                android:src="@drawable/ic_photography"/>
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/transparent"
+                android:text="Speed"/>
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitCenter"
+                android:id="@+id/beauty_button"
+                android:onClick="onClickButtons"
+                android:src="@drawable/ic_effect"/>
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/transparent"
+                android:text="Beauty"/>
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitCenter"
+                android:id="@+id/filter_button"
+                android:onClick="onClickButtons"
+                android:src="@drawable/ic_filter"/>
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/transparent"
+                android:text="Filters"/>
+
+            <ImageView
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitCenter"
+                android:id="@+id/timer"
+                android:src="@drawable/ic_timer"/>
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/transparent"
+                android:text="Timer"/>
+        </LinearLayout>
+
         <!--functions layout-->
         <LinearLayout
             android:id="@+id/functions_layout"
@@ -105,12 +190,12 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="29dp">
 
-            <Button
-                android:id="@+id/filter_button"
-                android:layout_width="52dp"
-                android:layout_height="55dp"
-                android:onClick="onClickButtons"
-                android:background="@drawable/filter_btn_default"/>
+<!--            <Button-->
+<!--                android:id="@+id/filter_button"-->
+<!--                android:layout_width="52dp"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:onClick="onClickButtons"-->
+<!--                android:background="@drawable/filter_btn_default"/>-->
 
             <Button
                 android:id="@+id/sticker_button"
@@ -122,23 +207,23 @@
 
             <ToggleButton
                 android:id="@+id/shutter_button"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="23.5dp"
                 android:text=""
                 android:textOn=""
                 android:textOff=""
                 android:checked="false"
                 android:onClick="onClickButtons"
-                android:background="@drawable/btn_shutter_photo_blue"/>
+                android:background="@drawable/a2"/>
 
-            <Button
-                android:id="@+id/beauty_button"
-                android:layout_width="52dp"
-                android:layout_height="55dp"
-                android:layout_marginStart="23.5dp"
-                android:onClick="onClickButtons"
-                android:background="@drawable/beauty_btn_default"/>
+<!--            <Button-->
+<!--                android:id="@+id/beauty_button"-->
+<!--                android:layout_width="52dp"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:layout_marginStart="23.5dp"-->
+<!--                android:onClick="onClickButtons"-->
+<!--                android:background="@drawable/beauty_btn_default"/>-->
 
             <Button
                 android:id="@+id/bulge_button"

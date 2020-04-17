@@ -65,6 +65,7 @@ import java.util.Set;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+
 public class CameraActivity extends AppCompatActivity {
 
     private static final String TAG = CameraActivity.class.getSimpleName();
@@ -188,7 +189,9 @@ public class CameraActivity extends AppCompatActivity {
         mCamera.startCamera();
         mARGSession.resume();
 
+        mScreenRatio = ARGFrame.Ratio.RATIO_FULL;
         setGLViewSize(mCamera.getPreviewSize());
+        initRatioUI();
     }
 
     @Override
@@ -345,13 +348,13 @@ public class CameraActivity extends AppCompatActivity {
             case R.id.shutter_photo_button: {
                 mDataBinding.shutterPhotoButton.setViewSelected(true);
                 mDataBinding.shutterVideoButton.setViewSelected(false);
-                mDataBinding.shutterButton.setBackgroundResource(R.drawable.btn_shutter_photo_blue);
+                mDataBinding.shutterButton.setBackgroundResource(R.drawable.a2);
                 break;
             }
             case R.id.shutter_video_button: {
                 mDataBinding.shutterPhotoButton.setViewSelected(false);
                 mDataBinding.shutterVideoButton.setViewSelected(true);
-                mDataBinding.shutterButton.setBackgroundResource(R.drawable.btn_shutter_video_blue);
+                mDataBinding.shutterButton.setBackgroundResource(R.drawable.a2);
                 break;
             }
             case R.id.camera_switch_button:
@@ -493,7 +496,7 @@ public class CameraActivity extends AppCompatActivity {
         mARGSession.contents().clear(ARGContents.Type.Bulge);
     }
 
-    public void setItem(ARGContents.Type type, String path, ItemModel itemModel) {
+    public void setItem(final ARGContents.Type type, String path, final ItemModel itemModel) {
 
         mCurrentStickeritem = null;
         mHasTrigger = false;
@@ -518,8 +521,8 @@ public class CameraActivity extends AppCompatActivity {
         });
     }
 
-    public void setSticker(ItemModel item) {
-        String filePath = mItemDownloadPath + "/" + item.uuid;
+    public void setSticker(final ItemModel item) {
+        final String filePath = mItemDownloadPath + "/" + item.uuid;
         if (getLastUpdateAt(CameraActivity.this) > getStickerUpdateAt(CameraActivity.this, item.uuid)) {
             new FileDeleteAsyncTask(new File(filePath), new FileDeleteAsyncTask.OnAsyncFileDeleteListener() {
                 @Override
@@ -546,9 +549,9 @@ public class CameraActivity extends AppCompatActivity {
         mARGSession.contents().clear(ARGContents.Type.ARGItem);
     }
 
-    public void setFilter(ItemModel item) {
+    public void setFilter(final ItemModel item) {
 
-        String filePath = mItemDownloadPath + "/" + item.uuid;
+        final String filePath = mItemDownloadPath + "/" + item.uuid;
         if (getLastUpdateAt(CameraActivity.this) > getFilterUpdateAt(CameraActivity.this, item.uuid)) {
             new FileDeleteAsyncTask(new File(filePath), new FileDeleteAsyncTask.OnAsyncFileDeleteListener() {
                 @Override
@@ -647,7 +650,7 @@ public class CameraActivity extends AppCompatActivity {
             ratio = ARGMedia.Ratio.RATIO_1_1;
         }
 
-        String path = mMediaPath + "/" + System.currentTimeMillis() + ".jpg";
+        final String path = mMediaPath + "/" + System.currentTimeMillis() + ".jpg";
         mARGMedia.takePicture(textureId, path, ratio);
         sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://"+path)));
 
@@ -739,7 +742,7 @@ public class CameraActivity extends AppCompatActivity {
 
 
     // region - network
-    private void requestSignedUrl(ItemModel item, String path, final boolean isArItem) {
+    private void requestSignedUrl(final ItemModel item, final String path, final boolean isArItem) {
         mDataBinding.progressBar.setVisibility(View.VISIBLE);
         mARGSession.auth().requestSignedUrl(item.zipFileUrl, item.title, item.type, new ARGAuth.Callback() {
             @Override
@@ -760,7 +763,7 @@ public class CameraActivity extends AppCompatActivity {
         });
     }
 
-    private void requestDownload(String targetPath, String url, ItemModel item, boolean isSticker) {
+    private void requestDownload(final String targetPath, String url, final ItemModel item, final boolean isSticker) {
         new DownloadAsyncTask(targetPath, url, new DownloadAsyncResponse() {
             @Override
             public void processFinish(boolean result) {
